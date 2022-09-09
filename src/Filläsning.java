@@ -4,6 +4,8 @@ import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/*
+
 public class Filläsning {
     public static void main(String[] args) {
         BufferedReader inFile = openTextFileForReading("info.txt");
@@ -53,3 +55,4 @@ public class Filläsning {
         return null;
     }
 }
+*/
