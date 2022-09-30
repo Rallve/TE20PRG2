@@ -10,7 +10,7 @@ public class encryptVIew {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        pb1 = new JProgressBar(0,100);
+        //pb1 = new JProgressBar(0,100);
     }
 
     private JPanel panel1;

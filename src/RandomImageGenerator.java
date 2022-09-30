@@ -15,7 +15,7 @@ public class RandomImageGenerator {
             Random r = new Random();
             int x;
             x = r.nextInt(0xffffff);
-            writer.write(x);
+            writer.write(Integer.toString(x));
             for (int i = 1; i < 1920 * 1080; i++) {
                 x = r.nextInt(0xffffff);
                 writer.write("\n" + x);

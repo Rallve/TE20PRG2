@@ -4,6 +4,35 @@ import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import java.io.*;
+
+
+public class Filläsning {
+    public static void main(String[] args) throws IOException {
+        FileOutputStream file = new FileOutputStream("Output.txt");
+        DataOutputStream data = new DataOutputStream(file);
+        BufferedReader input;
+
+        try {
+            input = new BufferedReader(new FileReader("test1.txt"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println(input.readLine());
+        System.out.println(input.readLine());
+
+        data.writeInt(Integer.parseInt(input.readLine()));
+        data.flush();
+        data.close();
+        System.out.println("Succcess...");
+        System.out.println();
+    }
+}
+
+
+
+
 /*
 
 public class Filläsning {
