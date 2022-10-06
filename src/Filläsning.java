@@ -3,9 +3,7 @@ import java.io.DataOutput;
 import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
 import java.io.*;
-
 
 public class Filläsning {
     public static void main(String[] args) throws IOException {
@@ -18,12 +16,15 @@ public class Filläsning {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        System.out.println(input.readLine());
-        System.out.println(input.readLine());
-
-        data.writeInt(Integer.parseInt(input.readLine()));
-        data.flush();
+        for (int i = 0; i < 99999999; i++) {
+            try {
+                data.writeInt(Integer.parseInt(input.readLine()));
+                data.flush();
+            } catch (Exception e) {
+                System.out.println("Reached end of file. Breaking loop...");
+                break;
+            }
+        }
         data.close();
         System.out.println("Succcess...");
         System.out.println();
