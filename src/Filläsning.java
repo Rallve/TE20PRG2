@@ -26,7 +26,7 @@ public class Filläsning {
             }
         }
         data.close();
-        System.out.println("Succcess...");
+        System.out.println("Success...");
         System.out.println();
     }
 }

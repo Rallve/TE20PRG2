@@ -6,40 +6,35 @@ public class Encrypt {
         //List<String> log = new ArrayList<String>();
         String message = "";
         String input = JOptionPane.showInputDialog("Skriv ett meddelande");
-        char key = JOptionPane.showInputDialog("Ange nyckel").charAt(0);
-        System.out.println(key);
-        for (int i = 0; i < input.length(); i++) {
-            char letter = input.charAt(i);
-            int ascii = letter;
-            //String keyBin = Integer.toBinaryString(key);
+        String key = JOptionPane.showInputDialog("Ange nyckel");
 
-            //String bin = Integer.toBinaryString(ascii);
-            //String hex = Integer.toHexString(ascii);
+        String extKey = extendKey(input, key);
 
-            int enc = ascii^key;
+        String encStr = encrypt(input, extKey);
+        System.out.println(encStr);
+    }
 
-            //System.out.println(enc);
-
-            char encChar = (char) enc;
-            //System.out.println(encChar);
-
-            message += encChar;
-
-            /*
-            log.add("");
-
-            System.out.println(letter);
-            System.out.println(ascii);
-            System.out.println(bin);
-            System.out.println(hex);
-            System.out.println(keyBin);
-            System.out.println(enc);
-            System.out.println(dec);
-            System.out.println("");
-
-             */
+    private static String extendKey(String input, String key) {
+        String binKey = "";
+        String extKey = "";
+        for (int n = 0; n < key.length(); n++) {
+            binKey += key.charAt(n);
         }
-        JOptionPane.showMessageDialog(null, message);
-        System.out.println(message);
+        for (int i = 0; i < (input.length()); i++) {
+            extKey += binKey.charAt(i % binKey.length());
+        }
+        return extKey;
+    }
+
+    private static String encrypt(String input, String extKey) {
+        int enc;
+        char encChar = '\0';
+        String encStr = "";
+        for (int i = 0; i < input.length(); i++) {
+            enc = input.charAt(i) ^ extKey.charAt(i);
+            encChar = (char) enc;
+            encStr += encChar;
+        }
+        return encStr;
     }
 }

@@ -10,18 +10,11 @@ public class encryptVIew {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        //pb1 = new JProgressBar(0,100);
     }
 
     private JPanel panel1;
+    private JTextField textField1;
+    private JTextField textField2;
     private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JProgressBar pb1;
-
-
-
-
 }
 
